@@ -1,0 +1,14 @@
+name: Weekly Homelab Health Check
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 2AM UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Placeholder health check
+        run: echo "✅ Homelab project health check ran at $(date)"
