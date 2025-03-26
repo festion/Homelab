@@ -83,13 +83,42 @@ _All remotes now use SSH instead of HTTPS to improve security and avoid credenti
 
 ---
 
+## 📁 Repository: `halo`
+
+**Workflows:**
+- _None currently_
+
+**Secrets Required:**
+- _None_
+
+**Notes:**
+- Remote repository belongs to another user (`yashmulgaonkar`).
+- Push access denied; use fork if contributions are needed.
+
+---
+
+## 📁 Repository: `community-scripts/ProxmoxVE`
+
+**Workflows:**
+- _None configured locally_
+
+**Secrets Required:**
+- _None_
+
+**Notes:**
+- Third-party repository.
+- Read-only access; push access denied.
+- Local edits must be maintained in a fork for contributions.
+
+---
+
 ## 🔐 Extended Secrets (Planned)
 
 | Secret Name                | Purpose                                          | Scope                      |
 |----------------------------|--------------------------------------------------|-----------------------------|
 | `GH_TOKEN_ADMIN_AB_GATEWAY` | Push changes to `component-ab-gateway` fork     | `component-ab-gateway` repo|
-| `EMAIL_USERNAME`          | Send audit summary emails                       | `homelab-gitops-auditor` (future)
-| `EMAIL_PASSWORD`          | SMTP auth token or app-specific password        | `homelab-gitops-auditor` (future)
+| `EMAIL_USERNAME`          | Send audit summary emails                       | `homelab-gitops-auditor` (future) |
+| `EMAIL_PASSWORD`          | SMTP auth token or app-specific password        | `homelab-gitops-auditor` (future) |
 
 ---
 
