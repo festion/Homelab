@@ -89,13 +89,13 @@ _All remotes now use SSH instead of HTTPS to improve security and avoid credenti
 - _None currently_
 
 **Secrets Required:**
-- _None_
+- _None currently_
 
 **Notes:**
-- Remote repository belongs to another user (`yashmulgaonkar`).
-- Push access denied; use fork if contributions are needed.
-
----
+- Original repository belongs to `yashmulgaonkar`.
+- Forked to `festion/halo` for independent development.
+- SSH remote set to `git@github.com:festion/halo.git`.
+- Optionally add GitHub Actions for build, test, or sync.
 
 ## 📁 Repository: `community-scripts/ProxmoxVE`
 
