@@ -1,8 +1,9 @@
 <details> <summary>📄 Click to Expand Markdown</summary>
-
 # Repository GitHub Actions and Secrets Overview
 
 This document outlines the current GitHub Actions workflows across all repositories in the homelab ecosystem, along with the required GitHub Secrets for each.
+
+_All remotes now use SSH instead of HTTPS to improve security and avoid credential prompts._
 
 ---
 
@@ -17,6 +18,7 @@ This document outlines the current GitHub Actions workflows across all repositor
 **Notes:**
 - Uses built-in `GITHUB_TOKEN` to commit audit reports.
 - Will be extended to generate weekly summary reports and email notifications.
+- Uses SSH for remote Git operations.
 
 ---
 
@@ -31,6 +33,7 @@ This document outlines the current GitHub Actions workflows across all repositor
 **Notes:**
 - Keeps forked repository in sync with `AprilBrother/component-ab-gateway` weekly.
 - Optionally extend to notify or summarize updates.
+- Uses SSH for remote Git operations.
 
 ---
 
@@ -45,6 +48,7 @@ This document outlines the current GitHub Actions workflows across all repositor
 **Notes:**
 - Runs `yamllint` to validate configuration YAMLs.
 - Consider adding schema or config validation in the future.
+- Uses SSH for remote Git operations.
 
 ---
 
@@ -59,6 +63,7 @@ This document outlines the current GitHub Actions workflows across all repositor
 **Notes:**
 - Uses `esphome config` to check YAML for errors.
 - Can be extended to compile firmware automatically.
+- Uses SSH for remote Git operations.
 
 ---
 
@@ -74,6 +79,7 @@ This document outlines the current GitHub Actions workflows across all repositor
 - Central summary of audit results
 - Project status dashboard
 - Integration with external notifications (email, webhook)
+- Uses SSH for remote Git operations.
 
 ---
 
@@ -82,10 +88,12 @@ This document outlines the current GitHub Actions workflows across all repositor
 | Secret Name                | Purpose                                          | Scope                      |
 |----------------------------|--------------------------------------------------|-----------------------------|
 | `GH_TOKEN_ADMIN_AB_GATEWAY` | Push changes to `component-ab-gateway` fork     | `component-ab-gateway` repo|
-| `EMAIL_USERNAME`          | Send audit summary emails                       | `homelab-gitops-auditor` (future)|
-| `EMAIL_PASSWORD`          | SMTP auth token or app-specific password        | `homelab-gitops-auditor` (future)|
+| `EMAIL_USERNAME`          | Send audit summary emails                       | `homelab-gitops-auditor` (future)
+| `EMAIL_PASSWORD`          | SMTP auth token or app-specific password        | `homelab-gitops-auditor` (future)
 
 ---
 
 _Last updated: 2025-03-26_
+
+
 </details>
