@@ -1,0 +1,31 @@
+name: Weekly Sync Component AB Gateway
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout component-ab-gateway fork
+        uses: actions/checkout@v4
+        with:
+          repository: festion/component-ab-gateway
+          ref: main
+          token: ${{ secrets.GH_TOKEN_ADMIN_AB_GATEWAY }}
+
+      - name: Configure Git User
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: Fetch and merge upstream changes
+        run: |
+          git remote add upstream https://github.com/AprilBrother/component-ab-gateway.git
+          git fetch upstream
+          git merge --ff-only upstream/main
+
+      - name: Push synced changes to your fork
+        run: git push origin main
