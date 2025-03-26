@@ -86,16 +86,22 @@ _All remotes now use SSH instead of HTTPS to improve security and avoid credenti
 ## 📁 Repository: `halo`
 
 **Workflows:**
-- _None currently_
+- `Weekly Sync with Upstream`
+- `Build and Release Halo EPD Firmware`
 
 **Secrets Required:**
-- _None currently_
+- `GH_TOKEN_ADMIN_HALO`: Fine-grained personal access token scoped to this fork, with `Contents: Read & Write`.
 
 **Notes:**
 - Original repository belongs to `yashmulgaonkar`.
-- Forked to `festion/halo` for independent development.
-- SSH remote set to `git@github.com:festion/halo.git`.
-- Optionally add GitHub Actions for build, test, or sync.
+- Forked to `festion/halo`.
+- SSH remote updated:
+  ```bash
+  git remote set-url origin git@github.com:festion/halo.git
+  git remote add upstream git@github.com:yashmulgaonkar/halo.git
+  ```
+- Keeps forked repository in sync with upstream weekly.
+- Add `GH_TOKEN_ADMIN_HALO` secret to enable workflow push.
 
 ## 📁 Repository: `community-scripts/ProxmoxVE`
 
@@ -119,10 +125,8 @@ _All remotes now use SSH instead of HTTPS to improve security and avoid credenti
 | `GH_TOKEN_ADMIN_AB_GATEWAY` | Push changes to `component-ab-gateway` fork     | `component-ab-gateway` repo|
 | `EMAIL_USERNAME`          | Send audit summary emails                       | `homelab-gitops-auditor` (future) |
 | `EMAIL_PASSWORD`          | SMTP auth token or app-specific password        | `homelab-gitops-auditor` (future) |
-
----
-
-_Last updated: 2025-03-26_
+| `GH_TOKEN_ADMIN_HALO`      | Push changes to `halo` fork                     | `halo` repo                |
+| `PAT_TOKEN`                | Create GitHub releases for firmware build       | `halo` repo                |
 
 
 </details>
